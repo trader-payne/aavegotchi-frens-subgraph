@@ -1,0 +1,15 @@
+type Fren @entity {
+     id: ID!
+     frens: BigInt!
+     ghst: BigInt!
+     uniV2PoolToken: BigInt!
+     user: Bytes!
+     jobs: [TicketValue!] @derivedFrom(field: "fren")
+}
+
+type TicketValue @entity {
+     id: ID!
+     fren: Fren!
+     ticketId: BigInt!
+     value: BigInt!
+}
